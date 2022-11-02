@@ -12,6 +12,7 @@ public class player {
 	private String name = "unknown";
 	public int strength = 0;
 	public int grid_size;
+	private static int move_counter = 0;
 
 	public player() {
 		System.out.println("Player initiated -- without -- name");
@@ -45,24 +46,28 @@ public class player {
 			if (player_position[1] != grid_size - 1) {
 				// System.out.println("Move Up prev" + player_position[1]);
 				player_position[1] += 1;
+				move_counter += 1;
 				// System.out.println("Move Up" + player_position[1]);
 			}
 		} else if (userMove == 2) {
 			if (player_position[1] != 0) {
 				// System.out.println("Move Down prev" + player_position[1]);
 				player_position[1] -= 1;
+				move_counter += 1;
 				// System.out.println("Move Down" + player_position[1]);
 			}
 		} else if (userMove == 3) {
 			if (player_position[0] != 0) {
 				// System.out.println("Move left prev" + player_position[0]);
 				player_position[0] -= 1;
+				move_counter += 1;
 				// System.out.println("Move left" + player_position[0]);
 			}
 		} else if (userMove == 4) {
 			if (player_position[0] != grid_size - 1) {
 				// System.out.println("Move right prev" + player_position[0]);
 				player_position[0] += 1;
+				move_counter += 1;
 				// System.out.println("Move right" + player_position[0]);
 			}
 
@@ -81,6 +86,7 @@ public class player {
 		treasure_local = treasure.treasure_position;
 		if (player_position[0] == treasure_local[0] && player_position[1] == treasure_local[1]) {
 			System.out.println("game win!!");
+			System.out.println("You have won the game in " + move_counter + " moves");
 			return true;
 		} else {
 			return false;

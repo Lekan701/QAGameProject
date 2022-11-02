@@ -8,6 +8,7 @@ public class App {
 		Scanner name = new Scanner(System.in); // Create a Scanner object
 		String player_name = name.nextLine();
 		System.out.println("Welcome to the Game " + player_name + "!");
+		
 
 		player p1 = new player("player_name");
 		
