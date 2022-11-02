@@ -26,6 +26,16 @@ public class AppTest {
   void Equal() {
 	  assertEquals(10,10);
   }
+  
+  @Test
+  void torf() {
+	  assertTrue(true);
+  }
+  
+  @Test
+  void torf2() {
+	  assertFalse(false);
+  }
 //  public void shouldAnswerWithTrue() {
 //    assertTrue(true);
 //  }
